@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Landing Page</title>
+
+</head>
+<body>
+    <div class="particula"></div>
+
+    <nav class="navegacao">
+         <ul class="menu">
+
+             <li>
+                 <a href="#Inicio" class="Menu-link">Incio</a>
+             </li>
+
+             <li>
+                  <a href="#Sobre" class="Menu-link">Sobre</a>
+             </li>
+
+             <li>
+                  <a href="#Projetos" class="Menu-link">Projetos</a>
+             </li>
+
+             <li>
+                  <a href="#Contato" class="Menu-link">Contato</a>
+             </li>
+
+         </ul>
+    </nav>
+
+    <main id="Inicio" class="cabecalho">
+        
+            <img src="tres-pessoas.webp" alt="Foto de Thyago" class="foto-perfil">
+            <h1>Thyago Afonso</h1>
+            <p class="sub-cabecalho">Desenvolvedor Front End</p>
+        
+    </main>
+
+    <section id="Sobre" class="Sobre">
+        <h2 class="sobre_titulo">Sobre mim</h2>
+        <div class="sobre_caixa">
+            <p class="sobre_paragrafo">
+                Olá! Sou um desenvolvedor front end apaixonado por criar experiências web únicas e memoráveis. Combino código limpo com desing moderno para desenvolver sites que não só funicona perfeitamente, mas também impressionam visualmente.
+            </p>
+        </div>
+    </section>
+
+    <section id="Projetos" class="Projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+            <div class="projetos-caixas">
+                    <div class="projetos-card">
+                        <img src="shutterstock_488013904-857x482.jpg" alt="Projeto Ferrari" class="projetos-imagens">
+                    <div class="caixa-texto-projetos">
+                        <h3 class="info-projetos">Loja de Carros</h3>
+                    
+                        <p class=" paragrafo-pojetos"> Loja virtual moderna com animaçôes suaves e um desing responsivel </p>
+                    </div>
+            </div>
+
+             <div class="projetos-card">
+                        <img src="viagens-estilosugar.jpg" alt="Projeto Viagens" class="projetos-imagens">
+                    <div  class="caixa-texto-projetos">
+                        <h3 class="info-projetos">Passagens de viagens</h3>           
+                        <p class=" paragrafo-pojetos"> Loja virtual moderna com animaçôes suaves e um desing responsivel </p>
+                    </div>
+             </div>
+
+            <div class="projetos-card">
+                        <img src="R.jpg" alt="Projeto Microsoft" class="projetos-imagens">
+                    <div  class="caixa-texto-projetos">
+                        <h3 class="info-projetos">Microsoft</h3>
+                        <p class=" paragrafo-pojetos"> Loja virtual moderna com animaçôes suaves e um desing responsivel </p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Contato" class="contato">
+        <h2 class="contatos-tiutlos">Entre em Contato</h2>
+        <form class="Formulario-contato" id="Formulario" onsubmit="enviarWhats(event)">
+            <div class="Grupo-formes">
+              <input placeholder="Nome" class="Campo-formes" id="nome">
+            </div>
+          
+            <div class="Grupo-formes">
+              <textarea class="Campo-formes" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea> 
+            <div>
+
+
+                <button type="submit" class="botao-form"> Enviar WhatsApp </button>
+        
+        </form>
+
+    </section>
+
+<script>
+    function enviarWhats(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5561996733899';
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        console.log(url);
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+
+</html>
